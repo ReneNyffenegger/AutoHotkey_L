@@ -616,6 +616,8 @@ enum GuiControlTypes {GUI_CONTROL_INVALID // GUI_CONTROL_INVALID must be zero du
 
 enum ThreadCommands {THREAD_CMD_INVALID, THREAD_CMD_PRIORITY, THREAD_CMD_INTERRUPT, THREAD_CMD_NOTIMERS};
 
+// https://stackoverflow.com/questions/57164169/class-with-friend-rather-than-forward-declaration-which-compiler-is-correct
+BIF_DECL(BIF_PerformAction);
 
 class Label; // Forward declaration so that each can use the other.
 class Line
