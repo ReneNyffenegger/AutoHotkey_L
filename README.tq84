@@ -25,3 +25,13 @@ git checkout -b tq84-gcc-KuString-strcasecmp
 git commit . -m "gcc has strcasecmp, no need to define it as stricmp"
 
 -------------------------------------------------
+
+git checkout -b tq84-on-const-lvalue-references
+-
+-  Stop gcc error »cannot bind non-const lvalue reference of type ... to an rvalue of type  ...«
+-
+git commit . -m "non-const lvalues, 1st commit"
+
+- THIS ONE is probably not finished
+
+-------------------------------------------------
