@@ -42,7 +42,7 @@ GNU General Public License for more details.
 //#define _WIN32_IE 0x0501  // Added for v1.0.35 to have MCS_NOTODAY resolve as expected, and possibly solve other problems on newer systems.
 #define _WIN32_IE _WIN32_IE_IE70  // Added for TVN_ITEMCHANGED, which most likely requires Vista.
 
-#ifdef _MSC_VER
+// TQ84 #ifdef _MSC_VER
 	#include "config.h" // compile-time configurations
 	#include "debug.h"
 
@@ -76,7 +76,7 @@ GNU General Public License for more details.
 	//#include "window.h"  // Not to be confused with "windows.h"
 	//#include "util.h"
 	//#include "SimpleHeap.h"
-#endif
+// TQ84 #endif
 
 // Lexikos: Defining _WIN32_WINNT 0x0600 seems to break TrayTip in non-English Windows,
 //			and possibly other things.  Instead, define any Vista constants we need here.
