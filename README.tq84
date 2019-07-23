@@ -17,3 +17,11 @@ git push
 git commit . -m "Uncomment ifdef _MSC_VER in stdafx.h"
 git push
 
+-------------------------------------------------
+
+git checkout tq84
+git checkout -b tq84-gcc-KuString-strcasecmp
+- #define of strcasecmp stricmp not necessary for gcc
+git commit . -m "gcc has strcasecmp, no need to define it as stricmp"
+
+-------------------------------------------------
