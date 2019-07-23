@@ -35,7 +35,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 #define _CRT_NON_CONFORMING_SWPRINTFS
 #include <windows.h>
+#ifdef _MSC_VER
 #define strcasecmp stricmp
+#endif
 #define wcscasecmp wcsicmp
 #else
 #define _vsnwprintf vswprintf
