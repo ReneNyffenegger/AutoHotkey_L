@@ -5,3 +5,6 @@ git checkout -b tq84
 
 git add README.tq84
 - add *.swp to .gitignore
+git commit
+git push --set-upstream origin tq84
+git commit
