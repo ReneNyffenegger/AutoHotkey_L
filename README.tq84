@@ -62,3 +62,14 @@ git push
 git checkout tq84
 git merge ifdef-ENABLE_REGISTERCALLBACK
 
+-------------------------------------------------
+
+git checkout -b tq84-inline-in-cpp
+
+- Some problems in var.h / var.cpp with inlnes
+
+#define __forceinline // TQ84
+...
+#undef __forceinline // TQ84
+
+git commit . -m "define/undef __forceinline"
