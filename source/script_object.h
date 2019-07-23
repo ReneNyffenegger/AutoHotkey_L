@@ -254,7 +254,7 @@ protected:
 		bool Assign(LPTSTR str, size_t len = -1, bool exact_size = false);
 		void AssignEmptyString();
 		void AssignMissing();
-		bool Assign(ExprTokenType &val);
+		bool Assign(ExprTokenType const &val);
 		bool Assign(ExprTokenType *val) { return Assign(*val); }
 		bool InitCopy(Variant &val);
 		void ReturnRef(ResultToken &result);
@@ -383,7 +383,7 @@ public:
 		return field && field->symbol == SYM_OBJECT ? field->object : nullptr;
 	}
 
-	bool SetOwnProp(name_t aName, ExprTokenType &aValue)
+	bool SetOwnProp(name_t aName, ExprTokenType const &aValue)
 	{
 		index_t insert_pos;
 		auto field = FindField(aName, insert_pos);
@@ -543,7 +543,7 @@ public:
 	ResultType InsertAt(index_t aIndex, TokenT aValue[], index_t aCount);
 	void       RemoveAt(index_t aIndex, index_t aCount);
 
-	bool Append(ExprTokenType &aValue);
+	bool Append(ExprTokenType const &aValue);
 	bool Append(LPTSTR aValue, size_t aValueLength = -1) { return Append(ExprTokenType(aValue, aValueLength)); }
 	bool Append(__int64 aValue) { return Append(ExprTokenType(aValue)); }
 
@@ -623,7 +623,7 @@ class Map : public Object
 	Pair *FindItem(LPTSTR val, index_t left, index_t right, index_t &insert_pos);
 	Pair *FindItem(IntKeyType val, index_t left, index_t right, index_t &insert_pos);
 	Pair *FindItem(SymbolType key_type, Key key, index_t &insert_pos);	
-	Pair *FindItem(ExprTokenType &key_token, LPTSTR aBuf, SymbolType &key_type, Key &key, index_t &insert_pos);
+	Pair *FindItem(ExprTokenType const &key_token, LPTSTR aBuf, SymbolType &key_type, Key &key, index_t &insert_pos);
 
 	void ConvertKey(ExprTokenType &key_token, LPTSTR buf, SymbolType &key_type, Key &key);
 
@@ -665,7 +665,7 @@ public:
 		return GetItem(aToken, key);
 	}
 
-	bool SetItem(ExprTokenType &aKey, ExprTokenType &aValue)
+	bool SetItem(ExprTokenType const &aKey, ExprTokenType const &aValue)
 	{
 		index_t insert_pos;
 		TCHAR buf[MAX_NUMBER_SIZE];
@@ -677,7 +677,7 @@ public:
 		return item->Assign(aValue);
 	}
 
-	bool SetItem(LPTSTR aKey, ExprTokenType &aValue)
+	bool SetItem(LPTSTR aKey, ExprTokenType const &aValue)
 	{
 		return SetItem(ExprTokenType(aKey), aValue);
 	}
