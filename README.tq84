@@ -41,3 +41,24 @@ git checkout -b tq84-forward-declaration-BIF_PerformAction
 - source\script.h: forward declaration for BIF_PerformAction;
 
 git commit . -m "Forward declaration for (friended) BIF_PerformAction"
+
+-------------------------------------------------
+
+git checkout alpha
+git checkout -b ifdef-ENABLE_REGISTERCALLBACK
+
+- Add #ifdef ENABLE_REGISTERCALLBACK around CallbackCreate and CallbackFree
+-    in script.cpp
+
+git commit . -m "Add CallbackCreate and CallbackFree to g_BIF only if ENABLE_REGISTERCALLBACK is defined"
+
+
+- Add #ifdef ENABLE_DLLCALL around DllCall
+-    in script.cpp
+
+git commit . -m "Add DllCall to g_BIF only if ENABLE_DLLCALL is defined"
+git push
+
+git checkout tq84
+git merge ifdef-ENABLE_REGISTERCALLBACK
+
