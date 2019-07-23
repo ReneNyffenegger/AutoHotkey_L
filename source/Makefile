@@ -1,3 +1,5 @@
+COPTS=-DUNICODE -D_UNICODE -Wno-write-strings -fpermissive
+
 # AutoHotkey.exe: AutoHotkey.o Script.o script2.o script_object.o SimpleHeap.o StringConv.o TextIO.o
 AutoHotkey.exe: AutoHotkey.o
 	gcc $^ -o $@
@@ -6,7 +8,7 @@ AutoHotkey.o: AutoHotkey.cpp stdafx.h globaldata.h hook.h hotkey.h \
  keyboard_mouse.h defines.h ahkversion.h script.h SimpleHeap.h var.h \
  clipboard.h util.h WinGroup.h Util.h resources/resource.h \
  script_object.h Debugger.h os_version.h application.h window.h TextIO.h
-	gcc $(COPTS) -Wno-write-strings -fpermissive $< -c -o $@
+	gcc $(COPTS) $< -c -o $@
 
 Script.o: Script.cpp stdafx.h config.h debug.h KuString.h StringConv.h \
  script.h defines.h ahkversion.h SimpleHeap.h keyboard_mouse.h var.h \
