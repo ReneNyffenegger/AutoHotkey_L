@@ -1,7 +1,7 @@
 COPTS=-DUNICODE -D_UNICODE -Wno-write-strings -fpermissive
 
 # AutoHotkey.exe: AutoHotkey.o Script.o script2.o script_object.o SimpleHeap.o StringConv.o TextIO.o
-AutoHotkey.exe:   AutoHotkey.o Script.o
+AutoHotkey.exe:   AutoHotkey.o Script.o script2.o
 	gcc $^ -o $@
 
 AutoHotkey.o: AutoHotkey.cpp stdafx.h globaldata.h hook.h hotkey.h \
