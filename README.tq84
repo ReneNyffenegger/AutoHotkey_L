@@ -8,3 +8,12 @@ git add README.tq84
 git commit
 git push --set-upstream origin tq84
 git commit
+
+git add sourceMakefile
+git commit
+git push
+
+- Uncomment #ifdef _MSC_VER in stdafx.h
+git commit . -m "Uncomment ifdef _MSC_VER in stdafx.h"
+git push
+
