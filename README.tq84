@@ -1,0 +1,7 @@
+git clone https://github.com/ReneNyffenegger/AutoHotkey_L
+cd  AutoHotkey_L
+git checkout alpha
+git checkout -b tq84
+
+git add README.tq84
+- add *.swp to .gitignore
