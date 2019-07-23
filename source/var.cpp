@@ -1164,7 +1164,9 @@ ResultType Var::AssignStringToCodePage(LPCWSTR aBuf, int aLength, UINT aCodePage
 
 
 
+#define __forceinline // TQ84
 __forceinline void Var::MaybeWarnUninitialized()
+#undef __forceinline // TQ84
 {
 	if (IsUninitializedNormalVar())
 	{

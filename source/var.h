@@ -961,7 +961,9 @@ public:
 		mAttrib &= ~VAR_ATTRIB_UNINITIALIZED;
 	}
 
+#define __forceinline // TQ84
 	__forceinline void MaybeWarnUninitialized();
+#undef __forceinline // TQ84
 
 }; // class Var
 #pragma pack(pop) // Calling pack with no arguments restores the default value (which is 8, but "the alignment of a member will be on a boundary that is either a multiple of n or a multiple of the size of the member, whichever is smaller.")
