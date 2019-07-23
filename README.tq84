@@ -35,3 +35,9 @@ git commit . -m "non-const lvalues, 1st commit"
 - THIS ONE is probably not finished
 
 -------------------------------------------------
+
+git checkout -b tq84-forward-declaration-BIF_PerformAction
+
+- source\script.h: forward declaration for BIF_PerformAction;
+
+git commit . -m "Forward declaration for (friended) BIF_PerformAction"
