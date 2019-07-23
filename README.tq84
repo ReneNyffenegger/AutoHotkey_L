@@ -73,3 +73,9 @@ git checkout -b tq84-inline-in-cpp
 #undef __forceinline // TQ84
 
 git commit . -m "define/undef __forceinline"
+
+-------------------------------------------------
+
+git checkout -b tq84-VA_ARGS
+
+git commit . -m "Use token paste operator before __VA_ARGS__"
